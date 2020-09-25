@@ -20,7 +20,12 @@
 					</div>
 					<div class="form-group">
 						<label>Tipo de estado</label>
-						<input type="text" name="type_status_id" class="form-control" placeholder="Ej. Activo" value="<?php echo $statuses[0]->type_status_id?>">
+						<select name="type_status_id">
+                                <option value="">Seleccione...</option>
+                            <?php foreach($status as $status): ?>
+                                <option value="<?php echo $status->id ?>"><?php echo $status->name ?></option>
+                            <?php endforeach ?>
+                        </select>
 					</div>
 					
 					<div class="form-group">

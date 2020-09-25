@@ -24,11 +24,21 @@
 					</div>
 					<div class="form-group">
 						<label>Estado</label>
-						<input type="text" name="status_id" class="form-control" placeholder="Ej. 1" value="<?php echo $user[0]->status_id ?>">
+						<select name="status_id">
+                                <option value="">Seleccione...</option>
+                            <?php foreach($status as $status): ?>
+                                <option value="<?php echo $status->id ?>"><?php echo $status->name ?></option>
+                            <?php endforeach ?>
+                        </select>
 					</div>
 					<div class="form-group">
 						<label>Rol</label>
-						<input type="text" name="role_id" class="form-control" placeholder="Ej. 1" value="<?php echo $user[0]->role_id ?>">
+						<select name="user_id">
+                                <option value="">Seleccione...</option>
+                            <?php foreach($users as $user): ?>
+                                <option value="<?php echo $user->id ?>"><?php echo $user->name ?></option>
+                            <?php endforeach ?>
+                        </select>
 					</div>
 					<div class="form-group">
 						<button class="btn btn-primary">Actualizar</button>

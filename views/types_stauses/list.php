@@ -27,7 +27,7 @@
 							
 							
 							<td>
-								<a href="?controller=typestatuses" class="btn btn-warning" title="Editar pelicula">Editar</a>
+								<a href="?controller=typestatuses&method=edit&id=<?php echo $typeStatusers->id ?>" class="btn btn-warning" title="Editar pelicula">Editar</a>
 								<a href="?controller=typestatuses" class="btn btn-danger" title="Eliminar pelicula">Eliminar</a>
 							</td>
 						</tr>

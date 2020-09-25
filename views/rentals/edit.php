@@ -26,7 +26,12 @@
 					</div>
 					<div class="form-group">
 						<label>Cliente</label>
-						<input type="text" name="user_id" class="form-control" placeholder="Nombre cliente" value="<?php echo $rentals[0]->user_id?>">
+						<select name="user_id">
+                                <option value="">Seleccione...</option>
+                            <?php foreach($users as $user): ?>
+                                <option value="<?php echo $user->id ?>"><?php echo $user->name ?></option>
+                            <?php endforeach ?>
+                        </select>
 					</div>
 					
 					

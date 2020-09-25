@@ -55,6 +55,8 @@ class UserController
         if(isset($_REQUEST['id'])) {
             $id = $_REQUEST['id'];
             $user = $this->userModel->getById($id);
+            $users = $this->userModel->getAll();
+            $status = $this->status->getAll();
             require 'views/sidebar.php';
             require 'views/layout.php';
             require 'views/users/edit.php';

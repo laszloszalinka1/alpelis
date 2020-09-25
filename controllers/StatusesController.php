@@ -4,13 +4,16 @@
  * clase statuses
  */
 require 'models/Statuses.php';
+require 'models/typeStatuses.php';
 class StatusesController 
 {
 	private $statusesModel;
+	private $typeStatus;
 	function __construct()
 	{	
 		try{
 		$this->statusesModel = new Statuses;
+		$this->typeStatus = new TypeStatuses;
 	}catch(PDOException $e){
 		die($e->getMesage());
 	}
@@ -47,6 +50,7 @@ class StatusesController
         if(isset($_REQUEST['id'])) {
             $id = $_REQUEST['id'];
             $statuses = $this->statusesModel->getById($id);
+            $status = $this->typeStatus->getAll();
             require 'views/sidebar.php';
             require 'views/layout.php';
             require 'views/statuses/edit.php';

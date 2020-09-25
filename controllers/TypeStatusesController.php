@@ -24,6 +24,7 @@ class TypeStatusesController
 		require 'views/sidebar.php';
 		require 'views/types_stauses/new.php';
 	}
+
 	public function save()
 	{
 		try{
@@ -33,5 +34,18 @@ class TypeStatusesController
 	}
 
 	}
+	public function edit() 
+    {
+        if(isset($_REQUEST['id'])) {
+            $id = $_REQUEST['id'];
+            $statuses = $this->TypeStatusesModel->getById($id);
+            $status = $this->TypeStatusesModel->getAll();
+            require 'views/sidebar.php';
+            require 'views/layout.php';
+            require 'views/types_statuses/edit.php';
+        } else {
+            echo 'Error, Se requiere el id del usuario';
+        }
+    }
 
 }

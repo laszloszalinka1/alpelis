@@ -86,6 +86,7 @@ class RentalController
         if(isset($_REQUEST['id'])) {
             $id = $_REQUEST['id'];
             $rentals = $this->modelRenta->getById($id);
+            $users = $this->userModel->getAll();
 
             require 'views/sidebar.php';
             require 'views/layout.php';
