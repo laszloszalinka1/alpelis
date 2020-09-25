@@ -34,6 +34,7 @@
 								<a href="?controller=movie&method=edit&id=<?php echo $movies->id ?>" class="btn btn-warning" title="Editar pelicula">Editar</a>
 								<button data-toggle="modal" data-target="#editModal<?php echo $movies->id ?>" class="btn btn-success">EditarModal</button>
 								<a href="?controller=movie&method=delete&id=<?php echo $movies->id ?>" class="btn btn-danger" title="Eliminar pelicula">Eliminar</a>
+								<a href="?controller=movie&method=seeCategory&id=<?php echo $movies->id ?>" class="btn btn-success" title="Eliminar pelicula">Ver Categorías</a>
 							</td>
 						</tr>
 						<?php include 'views/movies/editModal.php' ?>

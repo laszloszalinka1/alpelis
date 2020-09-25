@@ -119,6 +119,23 @@ class MovieController
         $this->model->deleteMovie($_REQUEST);
         header('Location: ?controller=movie');
     }
+     public function seeCategory()
+    {
+        if(isset($_REQUEST['id'])){
+            $id=$_REQUEST['id'];
+            $data=$this->model->getById($id);
+            $id = $data[0]->id; 
+            $categories = $this->model->seeCategory($id); 
+
+
+            require 'views/layout.php';
+            require 'views/sidebar.php';
+            require 'views/movies/categories.php';
+        }else{
+            echo "Error, no se realizo.";
+        }
+
+    }
 
 }
 

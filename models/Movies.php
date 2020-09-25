@@ -95,4 +95,15 @@ class Movies
             return $e->getMessage();
         }    
     }
+    public function seeCategory($id)
+    {
+        try{
+            
+            $strSql = "SELECT cm.*, c.name FROM category_movie cm INNER JOIN movies m ON m.id = cm.movie_id INNER JOIN categories c ON c.id = cm.category_id WHERE movie_id  = $id";
+            $query = $this->pdo->select($strSql);
+            return $query;
+        }catch(PDOException $e){
+            die($e->getMessage());
+        }
+    }
 }
