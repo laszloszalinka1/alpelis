@@ -28,6 +28,7 @@ class MovieController
     public function index(){
         require 'views/layout.php';
         $movies=$this->model->getAll();
+        $users= $this->users->getAll();
         require 'views/sidebar.php';
         require 'views/movies/list.php';
         
@@ -96,6 +97,7 @@ class MovieController
             $id=$_REQUEST['id'];
 
             $data=$this->model->getById($id);
+            $movies=$this->model->getAll();
             $users=$this->users->getAll();
             $statuses=$this->status->getAll();
             $categories = $this->category->getAll();            

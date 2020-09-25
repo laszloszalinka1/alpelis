@@ -22,7 +22,12 @@
 					</div>
 					<div class="form-group">
 						<label>Usuario</label>
-						<input type="text" name="user_id" class="form-control" placeholder="Usuario" value="<?php echo $movies[0]->user_id ?>">
+						<select name="user_id">
+                                <option value="">Seleccione...</option>
+                            <?php foreach($users as $user): ?>
+                                <option value="<?php echo $user->id ?>"><?php echo $user->name ?></option>
+                            <?php endforeach ?>
+                        </select>
 					</div>
 					<div class="form-group">
 						<button class="btn btn-primary">Guardar</button>
